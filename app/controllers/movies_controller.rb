@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
   def index
     @movies = Movie.all.order({ :created_at => :desc })
+    if @signed_in == 
     
     render({ :template => "movie_templates/index.html.erb" })
   end

@@ -28,8 +28,52 @@
 </head>
 
 <body>
-  
+
+<% if notice != nil%>
+  <div style="border: thin green solid">
+  <%= notice %>
+  </div>
+<% end %>
+
+<% if alert != nil%>
+  <div style="border: thin solid red">
+  <%= alert %>
+  </div>
+<% end %>
+
   <ul class="navbar-nav mr-auto">
+    <h1> Signed in? <%=@signed_in%></h1>
+
+    <% if @signed_in%>
+      <li class="nav-item">
+        <a href="/user_bookmarks" class="nav-link">
+          My Bookmarks
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/user_edit_profile" class="nav-link">
+          Edit Profile
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/user_sign_out" class="nav-link">
+          Sign Out
+        </a>
+      </li>
+
+    <% else %>
+      <li class="nav-item">
+        <a href="/user_sign_in" class="nav-link">
+          Sign In
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/user_sign_up" class="nav-link">
+          Sign Up
+        </a>
+      </li>
+    <% end %>
+
     <li class="nav-item">
       <a href="/movies" class="nav-link">
         All movies

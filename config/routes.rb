@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   get("/", { :controller => "movies", :action => "index" })
 
+  # User routes
+  get("/user_sign_up", { :controller => "users", :action => "render_sign_up"})
+  get("/add_user", { :controller => "users", :action => "add_user"})
+
+  get("/user_sign_in", { :controller => "users", :action => "render_sign_in"})
+  get("/sign_in_user", { :controller => "users", :action => "sign_in_user"})
+  
+  
   # Movie routes
 
   # CREATE
